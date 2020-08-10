@@ -22,11 +22,16 @@ body{
 
 }
 
+.avatar{
+    text-align: center;
+    border-radius: 100px 100px 100px 100px;
+    height: 120px;
+    width: 120px;
+}
 
-h1{
-    /*font-size: 70px;*/
+.h1{
     font-weight: 200;
-    color: #ffff;
+    color: white;
     display:inline-block;
     overflow:hidden;
     white-space:nowrap;
