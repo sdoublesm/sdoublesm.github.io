@@ -1,0 +1,75 @@
+html, body{height: 100%;}
+
+
+body{
+    background: #000000;
+    font-family: 'Heebo', sans-serif;
+}
+
+.title_case{
+    display: table;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+}
+
+.title_case_copy{
+    display: table-cell;
+    height: 100%;
+    width: 100%;
+    vertical-align: middle;
+    text-align: center;
+
+}
+
+
+h1{
+    /*font-size: 70px;*/
+    font-weight: 200;
+    color: #ffff;
+    display:inline-block;
+    overflow:hidden;
+    white-space:nowrap;
+    width: 13ch;
+    animation: typing 1.2s steps(13), blink .3s step-end infinite alternate;
+    border-right: 3px solid;
+    font-size: 2em;
+}
+
+
+
+.fab.fa-instagram.fa-3x{
+    padding: 20px;
+    color: tomato;
+    text-decoration: none;
+}
+
+.fab.fa-github.fa-3x{
+    padding: 20px;
+    color: tomato;
+    text-decoration: none;
+}
+
+.fab.fa-twitter.fa-3x{
+    padding: 20px;
+    color: tomato;
+    text-decoration: none;
+}
+
+.fab.fa-telegram.fa-3x{
+    padding: 20px;
+    color: tomato;
+    text-decoration: none;
+}
+
+@keyframes typing {
+    from {
+      width: 0
+    }
+  }
+      
+  @keyframes blink {
+    50% {
+      border-color: transparent
+    }
+  }
