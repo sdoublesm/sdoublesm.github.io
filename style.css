@@ -37,7 +37,7 @@ h1{
     border-radius: 100px 100px 100px 100px;
     height: 150px;
     width: 150px;
-    animation: pulse 2s;
+    animation: pulse 1.5s;
 }
 
 .fab.fa-instagram.fa-3x{
