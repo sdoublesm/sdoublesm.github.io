@@ -1,4 +1,48 @@
-html, body{height: 100%;}
+html,body{height: 100%;}
+
+
+/* for desktops */
+@media (max-width: 1200px) {
+    html {
+        zoom: 230%;
+	}
+} 
+
+
+/* for laptops */
+@media (max-width: 991px) {
+    html {
+        zoom: 200%;
+	}
+} 
+
+/* for large tablets */
+@media (min-width: 768px) and (max-width: 990px) {
+	html {
+        zoom: 180%;
+	}
+} 
+
+/* for smaller tablets */
+@media (max-width: 768px) {
+	html {
+        zoom: 150%;
+	}
+} 
+
+/* for cellphones */
+@media (max-width: 500px) {
+	html {
+        zoom: 100%;
+	}
+} 
+
+
+
+
+
+
+
 
 body{
     background: #000000;
@@ -89,18 +133,6 @@ h1{
         transform: scale(0.5);
         box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
     }
-/*
-    70% {
-        transform: scale(1);
-        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
-    }
-
-    100% {
-        transform: scale(0.5);
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
-    }*/
-}
 
 /*- - - - - - - - - - - - - - - - -*/
-
 
