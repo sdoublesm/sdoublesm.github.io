@@ -39,14 +39,8 @@ html,body{height: 100%;}
 
 
 
-
-
-
-
-
 body{
     background: #000000;
-    font-family: 'Heebo', sans-serif;
 }
 
 .title_case{
@@ -62,5 +56,18 @@ body{
     width: 100%;
     vertical-align: middle;
     text-align: center;
+}
+
+.cd_title{
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 10px;
+
+}
+
+.cd{
+    font-family: 'Heebo', sans-serif;    
+    color: springgreen;
+    font-size: 30px;
 
 }
