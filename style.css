@@ -108,6 +108,26 @@ h1{
     text-decoration: none;
 }
 
+.button{
+    padding-top: 28px;
+}
+
+.cd_button{
+    background-color: #000000; 
+    border: 1px solid springgreen;
+    color: springgreen;
+    padding: 10px 20px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+}
+
+.cd_button:hover {
+    background-color: springgreen;
+    color: black;
+  }
 
 /*- - - - Typing animation - - - -*/
 
