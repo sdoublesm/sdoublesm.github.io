@@ -63,8 +63,6 @@ body{
     color: white;
     font-family: 'Roboto Mono', monospace;
     font-size: 10px;
-    animation-delay: 1s;
-    animation: pulse 1.5s;
 
 }
 
@@ -72,17 +70,4 @@ body{
     font-family: 'Heebo', sans-serif;    
     color: springgreen;
     font-size: 30px;
-    animation-delay: 4s;
-    animation: pulse 1.5s;
 }
-
-/*- - - - Pulse animation - - - -*/
-
-@keyframes pulse {
-    0% {
-        transform: scale(0.5);
-        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
-    }
-  }
-
-/*- - - - - - - - - - - - - - - - -*/
