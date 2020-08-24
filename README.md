@@ -1,2 +1,2 @@
 # sdoublesm.github.io
-Personal Website.
+Personal Static Website.
