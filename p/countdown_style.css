@@ -72,7 +72,7 @@ body{
     font-family: 'Heebo', sans-serif;    
     color: springgreen;
     font-size: 30px;
-    animation-delay: 1s;
+    animation-delay: 4s;
     animation: pulse 1.5s;
 }
 
