@@ -1,6 +1,5 @@
 html,body{height: 100%;}
 
-
 /* for desktops */
 @media (max-width: 1200px) {
     html {
@@ -66,7 +65,7 @@ h1{
     overflow:hidden;
     white-space:nowrap;
     width: 13ch;
-    animation: typing 1.2s steps(13), blink .3s step-end infinite alternate;
+    animation: typing 1.2s steps(11), blink .3s step-end infinite alternate;
     border-right: 3px solid;
     font-size: 2em;
 }
@@ -74,51 +73,27 @@ h1{
 
 .avatar{
     border-radius: 100px 100px 100px 100px;
-    height: 150px;
-    width: 150px;
+    height: 200px;
+    width: 200px;
     animation: pulse 1.5s;
 }
 
-.fab.fa-instagram.fa-3x{
-    padding: 20px;
-    color: 	springgreen;
-    text-decoration: none;
-}
-
-.fab.fa-github.fa-3x{
-    padding: 20px;
-    color: springgreen;
-    text-decoration: none;
-}
-
-.fab.fa-twitter.fa-3x{
-    padding: 20px;
-    color: springgreen;
-    text-decoration: none;
-}
-
-.fab.fa-telegram.fa-3x{
-    padding: 20px;
-    color: springgreen;
-    text-decoration: none;
-}
-
-.button{
-    padding-top: 28px;
-    box-shadow: 10px 10px darkblue;
-
-}
 
 .cd_button{
+    width: 300px;
+    height: 50px;
     background-color: #000000; 
     border: 1px solid springgreen;
     color: springgreen;
-    padding: 9px 19px;
+    padding: 10px 20px;
+    margin: 9px;
     text-align: center;
     display: inline-block;
-    font-size: 15px;
+    font-size: 18px;
     border-radius: 8px;
+    box-shadow: 0px 0px 7px grey;
     transition-duration: 0.4s;
+    text-align: left;
 }
 
 .cd_button:hover {
@@ -126,6 +101,11 @@ h1{
     color: black;
 }
 
+
+i{
+    margin-left: 20px;
+    margin-right: 20px;
+}
 
 /*- - - - Typing animation - - - -*/
 
