@@ -1,5 +1,6 @@
 html,body{height: 100%;}
 
+
 /* for desktops */
 @media (max-width: 1200px) {
     html {
@@ -39,8 +40,8 @@ html,body{height: 100%;}
 
 body{
     background: #000000;
-    font-family: 'Heebo', sans-serif;
-}
+    font-family: 'Inter', sans-serif;
+  }
 
 .title_case{
     display: table;
@@ -64,8 +65,8 @@ h1{
     display:inline-block;
     overflow:hidden;
     white-space:nowrap;
-    width: 13ch;
-    animation: typing 1.2s steps(11), blink .3s step-end infinite alternate;
+    width: 10ch;
+    animation: typing 1.2s steps(16), blink .3s step-end infinite alternate;
     border-right: 3px solid;
     font-size: 2em;
 }
