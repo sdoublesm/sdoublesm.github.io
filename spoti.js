@@ -9,5 +9,6 @@ fetch('https://api.spotify.com/v1/me/player/recently-played', {
 .then(text => {
     songname = JSON.parse(text)["items"][0]["track"]["name"]
     artist = JSON.parse(text)["items"][0]["track"]["artists"][0]["name"]
-    document.getElementById("output").innerHTML = "'" + songname + "'" + " by " + artist
+    time = JSON.parse(text)["items"][0]["played_at"]
+    document.getElementById("output").innerHTML = "'" + songname + "'" + " by " + artist + "<br>on " + time
 });
