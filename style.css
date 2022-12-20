@@ -69,6 +69,7 @@ h1{
     animation: typing 1.2s steps(16), blink .3s step-end infinite alternate;
     border-right: 3px solid;
     font-size: 2em;
+    margin-bottom: 0%;
 }
 
 h2{

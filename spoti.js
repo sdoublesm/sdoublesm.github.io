@@ -1,14 +1,1 @@
-fetch('https://api.spotify.com/v1/me/player/recently-played', {
-    method: 'GET',
-    headers: {
-        'Accept': 'application/json',
-        'Authorization': 'Bearer BQC7JygSk4ea8UXlBz7yf8eLKrgxfwVU_OcC0FP2iYdl7VLfbilrxV-4xpRjr_Gym2w-CNQ6CesP_og3dtuIkQatkXpAOTh3SxKVB6l26NTOt3R9VdwNpBg02qkT1uk3eIjqTy4uYoXnaF91G9AWb63WT3vQdeXxLzIsQhgXJ1OsxvPYnw1hsUOk_jiGNlu6VWhB'
-    },
-})
-.then(response => response.text())
-.then(text => {
-    songname = JSON.parse(text)["items"][0]["track"]["name"]
-    artist = JSON.parse(text)["items"][0]["track"]["artists"][0]["name"]
-    time = JSON.parse(text)["items"][0]["played_at"]
-    document.getElementById("output").innerHTML = "'" + songname + "'" + " by " + artist + "<br>on " + time
-});
+function _0x5156(){var _0x9a31dc=['94063AxnQHY','text','played_at','342456xxfMyy','275635QBXhlZ','track','name','1369354EnqMDh','output','GET','getElementById','\x20by\x20','artists','8UkjGGQ','10HnrvHj','Bearer\x20BQAqooMF6nrbr8L1VLgK_tIVorXE8oJv3mEurQZoDDHYd0zeX60uHmOjHo9-9HwYRZuAMtDtFgkxqPCLk5xcQsgvzdu-TEP4oxHcbo4L9kN6SyKmoq0yZETuBzzaA7YitzC51yVp6Jq8K62modhyv_F4LaasU4RkVAzWl3visKKF3D3n0LQ-U9cHcTC_3nloTg-7V0I','then','application/json','979872noDmSD','<br>on\x20','63fShFiT','innerHTML','parse','items','296202iJNfRI','7944519EoSwiD','12idsEqi'];_0x5156=function(){return _0x9a31dc;};return _0x5156();}var _0x3767bf=_0x273e;function _0x273e(_0x49a365,_0x1fee78){var _0x51563e=_0x5156();return _0x273e=function(_0x273e8e,_0x461f09){_0x273e8e=_0x273e8e-0xda;var _0x29e73e=_0x51563e[_0x273e8e];return _0x29e73e;},_0x273e(_0x49a365,_0x1fee78);}(function(_0x53c61c,_0x5dd388){var _0x15204b=_0x273e,_0x476cc1=_0x53c61c();while(!![]){try{var _0xd18d1f=parseInt(_0x15204b(0xdb))/0x1+-parseInt(_0x15204b(0xe8))/0x2*(parseInt(_0x15204b(0xf3))/0x3)+parseInt(_0x15204b(0xed))/0x4+-parseInt(_0x15204b(0xdf))/0x5*(-parseInt(_0x15204b(0xda))/0x6)+-parseInt(_0x15204b(0xe2))/0x7+parseInt(_0x15204b(0xde))/0x8*(-parseInt(_0x15204b(0xef))/0x9)+-parseInt(_0x15204b(0xe9))/0xa*(-parseInt(_0x15204b(0xf4))/0xb);if(_0xd18d1f===_0x5dd388)break;else _0x476cc1['push'](_0x476cc1['shift']());}catch(_0xce8197){_0x476cc1['push'](_0x476cc1['shift']());}}}(_0x5156,0x44adb),fetch('https://api.spotify.com/v1/me/player/recently-played',{'method':_0x3767bf(0xe4),'headers':{'Accept':_0x3767bf(0xec),'Authorization':_0x3767bf(0xea)}})[_0x3767bf(0xeb)](_0xa42071=>_0xa42071[_0x3767bf(0xdc)]())[_0x3767bf(0xeb)](_0x187a0b=>{var _0x2df425=_0x3767bf;songname=JSON[_0x2df425(0xf1)](_0x187a0b)[_0x2df425(0xf2)][0x0][_0x2df425(0xe0)][_0x2df425(0xe1)],artist=JSON[_0x2df425(0xf1)](_0x187a0b)[_0x2df425(0xf2)][0x0][_0x2df425(0xe0)][_0x2df425(0xe7)][0x0]['name'],time=JSON[_0x2df425(0xf1)](_0x187a0b)[_0x2df425(0xf2)][0x0][_0x2df425(0xdd)],document[_0x2df425(0xe5)](_0x2df425(0xe3))[_0x2df425(0xf0)]='\x27'+songname+'\x27'+_0x2df425(0xe6)+artist+_0x2df425(0xee)+time;}));
