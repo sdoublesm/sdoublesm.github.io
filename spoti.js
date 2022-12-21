@@ -1,1 +1,22 @@
-var _0x31a280=_0x1a1d;function _0x1a1d(_0xf5a0b3,_0x59fd82){var _0xbbaf89=_0xbbaf();return _0x1a1d=function(_0x1a1d8a,_0x57fafb){_0x1a1d8a=_0x1a1d8a-0x8f;var _0x421bf0=_0xbbaf89[_0x1a1d8a];return _0x421bf0;},_0x1a1d(_0xf5a0b3,_0x59fd82);}function _0xbbaf(){var _0x3fe64a=['then','4eiDwrq','GET','15881220pgtilY','56jTtIsu','1287431lOdZju','6634752oosVfF','\x20by\x20','getElementById','track','items','name','parse','text','application/json','765724OpYTPn','491813YaMRcI','Bearer\x20BQAeeke6tMz6jGDStXTfBCfj9I1IPlRAv_-PmvGdpuDSqef_3SR6vCNNy-elOyc81hbX43Un_1jx2gcQwRhmDPjTKhwPHXh_wo3gJuc34cppL8OZssVJE3dNKeSTaWGf8NHOAvoWK3Vr2kakylMjRmu7NOx0TCkk5Ke-bt3DrOp69aRUSFJOYgpnMagn5Mudvanf76I','3058105DRhwVf','innerHTML','https://api.spotify.com/v1/me/player/recently-played','1420854yORMUL','played_at'];_0xbbaf=function(){return _0x3fe64a;};return _0xbbaf();}(function(_0x16fe2a,_0x4cbab6){var _0x2e977e=_0x1a1d,_0x233111=_0x16fe2a();while(!![]){try{var _0x4c2640=parseInt(_0x2e977e(0x9e))/0x1+parseInt(_0x2e977e(0x91))/0x2+-parseInt(_0x2e977e(0x97))/0x3+parseInt(_0x2e977e(0x9a))/0x4*(-parseInt(_0x2e977e(0x94))/0x5)+-parseInt(_0x2e977e(0x9f))/0x6+parseInt(_0x2e977e(0x92))/0x7*(-parseInt(_0x2e977e(0x9d))/0x8)+parseInt(_0x2e977e(0x9c))/0x9;if(_0x4c2640===_0x4cbab6)break;else _0x233111['push'](_0x233111['shift']());}catch(_0x1652e2){_0x233111['push'](_0x233111['shift']());}}}(_0xbbaf,0xb799d),fetch(_0x31a280(0x96),{'method':_0x31a280(0x9b),'headers':{'Accept':_0x31a280(0x90),'Authorization':_0x31a280(0x93)}})[_0x31a280(0x99)](_0x2e4a4a=>_0x2e4a4a[_0x31a280(0x8f)]())[_0x31a280(0x99)](_0x1a4459=>{var _0x3f154c=_0x31a280;songname=JSON[_0x3f154c(0xa5)](_0x1a4459)[_0x3f154c(0xa3)][0x0][_0x3f154c(0xa2)]['name'],artist=JSON['parse'](_0x1a4459)[_0x3f154c(0xa3)][0x0][_0x3f154c(0xa2)]['artists'][0x0][_0x3f154c(0xa4)],time=Date[_0x3f154c(0xa5)](JSON[_0x3f154c(0xa5)](_0x1a4459)[_0x3f154c(0xa3)][0x0][_0x3f154c(0x98)]),document[_0x3f154c(0xa1)]('output')[_0x3f154c(0x95)]='\x27'+songname+'\x27'+_0x3f154c(0xa0)+artist+'<br>on\x20'+time;}));
+fetch('https://api.spotify.com/v1/me/player/recently-played', {
+    method: 'GET',
+    headers: {
+        'Accept': 'application/json',
+        'Authorization': 'Bearer BQAeeke6tMz6jGDStXTfBCfj9I1IPlRAv_-PmvGdpuDSqef_3SR6vCNNy-elOyc81hbX43Un_1jx2gcQwRhmDPjTKhwPHXh_wo3gJuc34cppL8OZssVJE3dNKeSTaWGf8NHOAvoWK3Vr2kakylMjRmu7NOx0TCkk5Ke-bt3DrOp69aRUSFJOYgpnMagn5Mudvanf76I'
+    },
+})
+.then(response => response.text())
+.then(text => {
+    songname = JSON.parse(text)["items"][0]["track"]["name"]
+    artist = JSON.parse(text)["items"][0]["track"]["artists"][0]["name"]
+    time = JSON.parse(text)["items"][0]["played_at"]
+
+    var d = new Date(time);
+    t = d.toString().split(" ")
+    console.log(t)
+    timeString = t[1] + " " + t[2] + ", " + t[3] + " at " + t[4]
+    console.log(timeString)
+
+
+    document.getElementById("output").innerHTML = "'" + songname + "'" + " by " + artist + "<br>on " + timeString
+});
