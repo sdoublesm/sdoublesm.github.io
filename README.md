@@ -1,4 +1,4 @@
 # sdoublesm.github.io
-Personal Static Website.
+Personal Static Website
 ---
 ![Screenshot](/media/screenshot.png "screenshot")
