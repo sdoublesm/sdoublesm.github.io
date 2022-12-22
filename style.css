@@ -66,7 +66,7 @@ h1{
     overflow:hidden;
     white-space:nowrap;
     width: 10ch;
-    animation: typing 1.2s steps(18), blink .3s step-end infinite alternate;
+    animation: typing 1.2s steps(17), blink .3s step-end infinite alternate;
     border-right: 3px solid;
     font-size: 2em;
     margin-bottom: 0%;
