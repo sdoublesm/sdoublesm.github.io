@@ -68,7 +68,7 @@ async function updateSpotifyStatus() {
             : `'${titleEscaped}'`;
 
         if (data.isPlaying) {
-            output.innerHTML = `${trackLink} by ${artistEscaped}<br><span class="spoti_live">• playing now on spotify</span>`;
+            output.innerHTML = `${trackLink} <br>by ${artistEscaped}<br><span class="spoti_live">• playing now on spotify</span>`;
         } else {
             const timeString = formatDate(data.playedAt);
             const dateHtml = timeString ? `<br>on ${timeString}` : '';
