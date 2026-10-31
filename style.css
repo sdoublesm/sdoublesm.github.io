@@ -1,4 +1,4 @@
-html,body{height: 100%;}
+﻿html,body{height: 100%;}
 
 
 /* for desktops */
@@ -66,7 +66,7 @@ h1{
     overflow:hidden;
     white-space:nowrap;
     width: 14ch;
-    animation: typing 1.5s steps(24), blink .3s step-end infinite alternate;
+    animation: typing 1.5s steps(14) forwards, blink .5s step-end 6;
     border-right: 3px solid;
     font-size: 2em;
     margin-bottom: 0%;
@@ -122,3 +122,26 @@ i{
   }
 
 /*- - - - - - - - - - - - - - - - -*/
+
+/*- - - - Spotify widget - - - -*/
+
+.spoti {
+    color: grey;
+    font-family: "Chivo Mono", "Chivo", monospace;
+    font-size: medium;
+}
+
+.spoti a {
+    color: #b0b0b0;
+    text-decoration: none;
+    text-decoration-color: #606060;
+    transition: color 0.2s ease;
+}
+
+.spoti a:hover {
+    color: #d0d0d0;
+}
+
+.spoti_live {
+    color: grey;
+}

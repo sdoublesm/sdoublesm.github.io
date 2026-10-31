@@ -1,1 +1,90 @@
-var _0x4260a9=_0x3a95;function _0x3a95(_0xc64b03,_0x14abc3){var _0x4ba3cd=_0x4ba3();return _0x3a95=function(_0x3a954c,_0x16ea98){_0x3a954c=_0x3a954c-0xe4;var _0xf1a648=_0x4ba3cd[_0x3a954c];return _0xf1a648;},_0x3a95(_0xc64b03,_0x14abc3);}(function(_0x48f253,_0x54fb0a){var _0x321dbc=_0x3a95,_0x8abf63=_0x48f253();while(!![]){try{var _0x1e0d08=parseInt(_0x321dbc(0xeb))/0x1+-parseInt(_0x321dbc(0xed))/0x2+parseInt(_0x321dbc(0x100))/0x3+-parseInt(_0x321dbc(0xe6))/0x4+-parseInt(_0x321dbc(0xe9))/0x5+-parseInt(_0x321dbc(0xec))/0x6*(-parseInt(_0x321dbc(0xfc))/0x7)+parseInt(_0x321dbc(0xf0))/0x8;if(_0x1e0d08===_0x54fb0a)break;else _0x8abf63['push'](_0x8abf63['shift']());}catch(_0x5358c0){_0x8abf63['push'](_0x8abf63['shift']());}}}(_0x4ba3,0x280f1),fetch(_0x4260a9(0xf3),{'method':_0x4260a9(0xf8),'headers':{'Accept':_0x4260a9(0xe5),'Content-Type':_0x4260a9(0xe7),'Authorization':_0x4260a9(0xff)}})['then'](_0x1a6f26=>_0x1a6f26[_0x4260a9(0xfe)]())[_0x4260a9(0xee)](_0x11102b=>{var _0x2a3667=_0x4260a9;tkn=_0x11102b['access_token'],fetch(_0x2a3667(0xe8),{'method':'GET','headers':{'Accept':_0x2a3667(0xe5),'Authorization':'Bearer\x20'+tkn}})['then'](_0x1fcf3d=>_0x1fcf3d[_0x2a3667(0xe4)]())[_0x2a3667(0xee)](_0x3abffd=>{var _0x20fb32=_0x2a3667;songname=JSON[_0x20fb32(0xfb)](_0x3abffd)['items'][0x0][_0x20fb32(0xf5)][_0x20fb32(0xef)],artist=JSON[_0x20fb32(0xfb)](_0x3abffd)[_0x20fb32(0xf7)][0x0][_0x20fb32(0xf5)]['artists'][0x0][_0x20fb32(0xef)],time=JSON[_0x20fb32(0xfb)](_0x3abffd)['items'][0x0][_0x20fb32(0xf2)];var _0x200e0b=new Date(time);t=_0x200e0b[_0x20fb32(0xfd)]()[_0x20fb32(0xea)]('\x20'),timeString=t[0x1]+'\x20'+t[0x2]+',\x20'+t[0x3]+_0x20fb32(0xf1)+t[0x4],document[_0x20fb32(0xf6)](_0x20fb32(0xfa))[_0x20fb32(0xf9)]='\x27'+songname+'\x27'+_0x20fb32(0xf4)+artist+'<br>on\x20'+timeString;});}));function _0x4ba3(){var _0x2340f3=['text','application/json','160572pdnTOt','application/x-www-form-urlencoded','https://api.spotify.com/v1/me/player/recently-played','443110CSefIP','split','46469Lxcrvi','12XLZrVz','420060YCletI','then','name','1717344WvXzKa','\x20at\x20','played_at','https://accounts.spotify.com/api/token?grant_type=refresh_token&refresh_token=AQC0I10tg7e2PeeVYtf6fPRk6boGBgV-dmvAFaqgZtq2zKuID70aTAxshMu3ntd_tiT-HkEdVil-kk45KZ6CMNQA0GnYhmzFxFkqyftvEkPFxpzEGq9ShEvjLDPzjkKHJf4','\x20by\x20','track','getElementById','items','POST','innerHTML','output','parse','649551HUUslN','toString','json','Basic\x20YWU3ZTEyNzEzY2I5NDM4Y2E1MTk3NDkyYzRmNjUzYjc6ZDI3OTQ5YTMzMjU4NDI4OTk0ZjU1MThjZDljMDc1Njg=','168459nYksWT'];_0x4ba3=function(){return _0x2340f3;};return _0x4ba3();}
+/**
+ * Spotify Now / Recently Played Widget
+ * Fetches real-time Spotify status from your secure serverless proxy.
+ */
+
+// Sostituisci questo URL con l'endpoint del tuo Cloudflare Worker o Vercel Function
+// Esempio: 'https://spotify-proxy.tuonome.workers.dev' oppure 'https://tuo-progetto.vercel.app/api/spotify'
+const SPOTIFY_API_URL = 'https://misty-silence-22e4.tenoremirko.workers.dev';
+
+function escapeHtml(str) {
+    if (!str) return '';
+    return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+function formatDate(isoString) {
+    if (!isoString) return '';
+    try {
+        const d = new Date(isoString);
+        if (isNaN(d.getTime())) return '';
+        const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+        const month = months[d.getMonth()];
+        const day = d.getDate();
+        const year = d.getFullYear();
+        const hours = String(d.getHours()).padStart(2, '0');
+        const minutes = String(d.getMinutes()).padStart(2, '0');
+        return `${month} ${day}, ${year} at ${hours}:${minutes}`;
+    } catch {
+        return '';
+    }
+}
+
+async function updateSpotifyStatus() {
+    const output = document.getElementById('output');
+    if (!output) return;
+
+    // Se l'URL non è ancora configurato, mostra solo i puntini
+    if (!SPOTIFY_API_URL) {
+        output.innerHTML = `<span class="spoti_loading">...</span>`;
+        return;
+    }
+
+    try {
+        const response = await fetch(SPOTIFY_API_URL, {
+            headers: { 'Accept': 'application/json' }
+        });
+
+        if (!response.ok) {
+            throw new Error(`API error: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log('[Spotify widget] data ricevuta:', data);
+
+        if (data.error || !data.title) {
+            output.innerHTML = `<span class="spoti_loading">...</span>`;
+            return;
+        }
+
+        const titleEscaped = escapeHtml(data.title);
+        const artistEscaped = escapeHtml(data.artist || 'Unknown Artist');
+        const trackLink = data.url
+            ? `<a href="${data.url}" target="_blank" rel="noopener noreferrer" class="spoti_track">'${titleEscaped}'</a>`
+            : `'${titleEscaped}'`;
+
+        if (data.isPlaying) {
+            output.innerHTML = `${trackLink} by ${artistEscaped}<br><span class="spoti_live">• playing now on spotify</span>`;
+        } else {
+            const timeString = formatDate(data.playedAt);
+            const dateHtml = timeString ? `<br>on ${timeString}` : '';
+            console.log(timeString)
+            output.innerHTML = `listened ${trackLink} <br>by ${artistEscaped}${dateHtml}`;
+        }
+
+    } catch (err) {
+        console.warn('Spotify fetch error:', err);
+        output.innerHTML = `<span class="spoti_loading">...</span>`;
+    }
+}
+
+// Avvia il caricamento quando il DOM è pronto
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', updateSpotifyStatus);
+} else {
+    updateSpotifyStatus();
+}
